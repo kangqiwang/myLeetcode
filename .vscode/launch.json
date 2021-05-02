@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Launch App",
             "request": "launch",
+            "mainClass": "App",
+            "projectName": "myLeetcode_366b0c52"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
             "mainClass": "LeetCodeJava.src.App",
             "projectName": "myLeetcode_366b0c52"
         },
