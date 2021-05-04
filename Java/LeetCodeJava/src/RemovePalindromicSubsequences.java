@@ -1,4 +1,3 @@
-package LeetCodeJava.src;
 class Solution {
 
     public int removePalindromeSub(String s) {
