@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #!/usr/bin/python  
 # -*- coding: utf-8 -*-
 #coding=utf-8
@@ -94,12 +93,3 @@ if __name__=='__main__':
         send_data(url)
         # print ("sleep in "+str(timeSleep)+"s")
         time.sleep(timeSleep)
-=======
-nums=[1,5,3,4]
-target=7
-for i in range(len(nums)):
-    a = target - nums.pop(0)
-    if a in nums:
-        print([i, nums.index(a)+i+1])
-
->>>>>>> 8fea8a3803b5213706d7ed1990850fd4ffc566f9
