@@ -1,4 +1,6 @@
 import collections
+from typing import List
+
 class Solution:
     def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
         for c in "!?',;.":
@@ -16,9 +18,9 @@ class Solution:
         banned_words = set(banned)
         ans = ""
         max_count = 0
-        word_count = defaultdict(int)
+        word_count = collections.defaultdict(int)
         word_buffer = []
-
+        print("banned_words"," : ",banned_words)
         for p, char in enumerate(paragraph):
             #1). consume the characters in a word
             if char.isalnum():
@@ -29,6 +31,8 @@ class Solution:
             #2). at the end of one word or at the end of paragraph
             if len(word_buffer) > 0:
                 word = "".join(word_buffer)
+                print("word_buffer" ," :",word_buffer)
+                
                 if word not in banned_words:
                     word_count[word] +=1
                     if word_count[word] > max_count:
@@ -36,5 +40,7 @@ class Solution:
                         ans = word
                 # reset the buffer for the next word
                 word_buffer = []
-
+            
         return ans
+    
+print(Solution().mostCommonWord2("Bob hit a ball, the hit BALL flew far after it was hit.",["hit"]))
