@@ -1,5 +1,6 @@
 from typing import List
 class Solution:
+    
     def asteroidCollision(self, asteroids: List[int]) -> List[int]:
         stack =[]
         for asteroid in asteroids:
@@ -30,5 +31,7 @@ class Solution:
                 elif stack[-1] + a == 0:
                     stack.pop()
         return stack
+    
+    
 print(Solution().asteroidCollision2([-10,1,2,5,-5,-10]))
             
