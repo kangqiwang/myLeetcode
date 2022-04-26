@@ -22,15 +22,13 @@ class Solution:
             if a > 0:
                 stack.append(a)
             else:
-                print(a)
                 while stack and stack[-1] > 0 and stack[-1] + a < 0:
                     print("while loop")
-                    print(stack)
                     stack.pop()
                 if not stack or stack[-1] < 0:
                     stack.append(a)
                 elif stack[-1] + a == 0:
                     stack.pop()
         return stack
-print(Solution().asteroidCollision2([10,1,2,-5,-10]))
+print(Solution().asteroidCollision2([-10,1,2,5,-5,-10]))
             
