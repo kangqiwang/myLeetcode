@@ -12,10 +12,10 @@ import heapq
 lists= [[1,4,5],[1,3,4],[2,6]]
 h=[(1, 0), (1, 1), (2, 2)]
 while h:
+    print(h)
     val,i=heapq.heappop(h)
-    print("val = ",val)
-    print("i=",i)
+    # print("val = ",val)
+    # print("i=",i)
     print(lists[i])
-    
-    
-# print(heapData)
+    if lists[i]:
+        heapq.heappush(h,(lists[i],i))
