@@ -22,17 +22,17 @@ class Solution:
         if not n:
             return []
         left,right,ans= n,n,[]
-        self.dns(left,right,ans,"")
+        self.dfs(left,right,ans,"")
         return ans
-    def dns(self,left,right,ans,string):
-        if right<left:
+    def dfs(self,left,right,ans,string):
+        if right < left:
             return
         if not left and not right:
             ans.append(string)
             return
         if left:
-            self.dns(left-1,right,ans,string+"(")
+            self.dfs(left-1, right, ans, string + "(")
         if right:
-            self.dns(left,right-1,ans,string+")")
+            self.dfs(left, right-1, ans, string + ")")
             
 print(Solution().generateParenthesis(3))
