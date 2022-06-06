@@ -1,3 +1,10 @@
+'''
+set(['4','0','3'])-set(['1','0'])
+
+result
+{'4','3'}
+
+'''
 
 # DFS algorithm
 def dfs(graph, start, visited=None):
@@ -5,7 +12,6 @@ def dfs(graph, start, visited=None):
         visited = set()
     visited.add(start)
 
-    print(start)
 
     for next in graph[start] - visited:
         dfs(graph, next, visited)
