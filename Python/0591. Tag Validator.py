@@ -16,6 +16,14 @@ A < is unmatched if you cannot find a subsequent >. And when you find a < or </,
 The cdata has the following format : <![CDATA[CDATA_CONTENT]]>. The range of CDATA_CONTENT is defined as the characters between <![CDATA[ and the first subsequent ]]>.
 CDATA_CONTENT may contain any characters. The function of cdata is to forbid the validator to parse CDATA_CONTENT, so even it has some characters that can be parsed as tag (no matter valid or invalid), you should treat it as regular characters.
 
+Input: code = "<DIV>This is the first line <![CDATA[<div>]]></DIV>"
+Output: true
+Explanation: 
+The code is wrapped in a closed tag : <DIV> and </DIV>. 
+The TAG_NAME is valid, the TAG_CONTENT consists of some characters and cdata. 
+Although CDATA_CONTENT has an unmatched start tag with invalid TAG_NAME, it should be considered as plain text, not parsed as a tag.
+So TAG_CONTENT is valid, and then the code is valid. Thus return true.
+
 
 '''
 
