@@ -5,6 +5,10 @@ Complexity
 
 Kosaraju's algorithm runs in linear time i.e. O(V+E).
 
+Strongly Connected Components Applications
+1. Vehicle routing applications
+2. Maps
+3. Model-checking in formal verification
 '''
 
 # Kosaraju's algorithm to find strongly connected components in Python
@@ -13,7 +17,7 @@ Kosaraju's algorithm runs in linear time i.e. O(V+E).
 from collections import defaultdict
 
 class Graph:
-
+    # vertex 顶点
     def __init__(self, vertex):
         self.V = vertex
         self.graph = defaultdict(list)
@@ -38,9 +42,9 @@ class Graph:
         stack = stack.append(d)
 
     # transpose the matrix
+    # 置换矩阵
     def transpose(self):
         g = Graph(self.V)
-
         for i in self.graph:
             for j in self.graph[i]:
                 g.add_edge(j, i)
@@ -50,10 +54,13 @@ class Graph:
     def print_scc(self):
         stack = []
         visited_vertex = [False] * (self.V)
-
+        
         for i in range(self.V):
             if not visited_vertex[i]:
+                print("i= "+str(i))
+                print("visited_vertex = "+str(visited_vertex))
                 self.fill_order(i, visited_vertex, stack)
+                print(stack)
 
         gr = self.transpose()
 
