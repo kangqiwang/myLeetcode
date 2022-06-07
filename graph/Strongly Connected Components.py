@@ -57,13 +57,12 @@ class Graph:
         
         for i in range(self.V):
             if not visited_vertex[i]:
-                print("i= "+str(i))
-                print("visited_vertex = "+str(visited_vertex))
+                # print("i= "+str(i))
+                # print("visited_vertex = "+str(visited_vertex))
                 self.fill_order(i, visited_vertex, stack)
                 print(stack)
 
         gr = self.transpose()
-
         visited_vertex = [False] * (self.V)
 
         while stack:
