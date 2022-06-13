@@ -20,5 +20,26 @@ class TreeNode:
 
 
 class Solution:
+    # def countDepth(self,node,depth=0):
+    #     if node:
+    #         return max(self.countDepth(node.left,depth+1),self.countDepth(node.right,depth+1))
+    #     else:
+    #         return depth
+    
+    def countDepth(node,count):
+        if node is None:
+            return count
+        count +=1
+        return max(countDepth(node.left, count), countDepth(node.right, count))
+
+
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-        pass
+        if not root:
+            return 0
+        return countDepth(root,depth = 0)
+    
+
+    
+        
+        
+print(Solution().maxDepth([3,9,20,None,None,15,7]))
