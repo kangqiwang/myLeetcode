@@ -44,3 +44,5 @@ class Solution:
                median = sortlst[k//2] if k%2 == 1 else (sortlst[k//2-1] + sortlst[k//2]) / 2
                res.append(median)
        return res
+
+print(Solution().medianSlidingWindow([1,2,3,4,2,3,1,4,2],3))
