@@ -43,5 +43,16 @@ class Solution:
                 best = max(best, y - x)
         return best
 
+    def longestConsecutive_my(self, nums: List[int]) -> int:
+        nums = set(nums)
+        result = 0
+        for num in nums:
+            if num-1 not in nums:
+                nextNum = num+1
+                while nextNum in nums:
+                    nextNum=nextNum+1
+                result = max(result,nextNum-num)
+    
+
 
 Solution().longestConsecutive_1([100,4,200,1,3,2,-1,0])
