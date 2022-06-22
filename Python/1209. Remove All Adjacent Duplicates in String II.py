@@ -25,6 +25,7 @@ Example 3:
 Input: s = "pbbcggttciiippooaais", k = 2
 Output: "ps"
 
+
 '''
 class Solution:
     def removeDuplicates(self, s: str, k: int) -> str:

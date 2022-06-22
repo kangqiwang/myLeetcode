@@ -16,6 +16,11 @@ Output: false
 
 '''
 
+import collections
+
+
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        pass
+        return  collections.Counter(s)  == collections.Counter(t)
+    
+Solution().isAnagram("rat","car")
