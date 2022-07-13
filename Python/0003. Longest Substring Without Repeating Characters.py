@@ -28,6 +28,9 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 
 from itertools import count
 from tkinter.tix import LabelEntry
+from turtle import left
+
+from pandas import set_eng_float_format
 
 
 class Solution:
@@ -41,8 +44,20 @@ class Solution:
             seen[s[i]]=i
             output = max(output,i-first)
         return output
-    
-print(Solution().lengthOfLongestSubstring("wwwwww"))
+    def lengthOfLongestSubstring2(self, s: str) -> int:
+        seen={}
+        left = 0
+        output = 0
+        for i in range(len(s)):
+            if s[i] not in seen:
+                output=max(output,i-left+1)
+            else:
+                if seen[s[i]] <1:
+                    output=max(output,i-left+1)
+                else:
+                    left = seen[s[i]]+1
+        return output
+print(Solution().lengthOfLongestSubstring2("wwwwww"))
             
             
         
