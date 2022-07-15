@@ -57,7 +57,18 @@ class Solution:
                 else:
                     left = seen[s[i]]+1
         return output
-print(Solution().lengthOfLongestSubstring2("wwwwww"))
+    def lengthOfLongestSubstring3(self, s:str) -> int:
+        seen={}
+        first = 0
+        output=0
+        for i in range(len(s)):
+            if s[i] in seen:
+                first = seen[s[i]]
+            else:
+                output = max(output,i-first+1)
+            seen[s[i]]=i
+        return output
+print(Solution().lengthOfLongestSubstring3("abcabcbb"))
             
             
         
