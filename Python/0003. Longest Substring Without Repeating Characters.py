@@ -27,6 +27,7 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 
 
 from itertools import count
+from operator import le
 from tkinter.tix import LabelEntry
 from turtle import left
 
@@ -62,13 +63,14 @@ class Solution:
         first = 0
         output=0
         for i in range(len(s)):
-            if s[i] in seen:
-                first = seen[s[i]]
-            else:
+            if s[i] not in seen:
                 output = max(output,i-first+1)
-            seen[s[i]]=i
+            else:
+                # output = max(output,i-first+1)
+                first=seen[s[i]]+1
+            seen[s[i]] = i
         return output
-print(Solution().lengthOfLongestSubstring3("abcabcbb"))
+print(Solution().lengthOfLongestSubstring3("tmmzuxt"))
             
             
         
