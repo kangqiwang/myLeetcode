@@ -31,12 +31,13 @@ class MovingAverage(object):
         Initialize your data structure here.
         :type size: int
         """
-        self.__size = size
-        self.__array =[]
+        self.size = size
+        self.array =[]
 
-    def next(self, val):
-        return sum(self.__array[-self.__size])/min(len(self.__array),self.__size)
+    def next(val,self):
+        self.array.append(val)
+        return sum(self.array[-self.size])/min(len(self.array),self.size)
     
     
 obj = MovingAverage(3)
-param_1 = obj.next(["MovingAverage", "next", "next", "next", "next"])
+param_1 = obj.next()
