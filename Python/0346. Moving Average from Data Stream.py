@@ -21,7 +21,9 @@ movingAverage.next(5); // return 6.0 = (10 + 3 + 5) / 3
 
 '''
 
-from numpy import array
+
+
+import collections
 
 
 class MovingAverage(object):
@@ -31,13 +33,20 @@ class MovingAverage(object):
         Initialize your data structure here.
         :type size: int
         """
+        self.queue = collections.deque()
         self.size = size
-        self.array =[]
 
-    def next(val,self):
-        self.array.append(val)
-        return sum(self.array[-self.size])/min(len(self.array),self.size)
+    def next(self,val):
+        if len(self.queue) == self.size:
+            self.queue.popleft()
+            self.queue.append(val)
+        else:
+            self.queue.append(val)
+        return sum(self.queue)/len(self.queue)
     
     
 obj = MovingAverage(3)
-param_1 = obj.next()
+print(obj.next(1))
+print(obj.next(10))
+print(obj.next(3))
+print(obj.next(5))
