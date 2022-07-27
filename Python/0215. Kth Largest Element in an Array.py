@@ -16,8 +16,15 @@ Input: nums = [3,2,3,1,2,4,5,5,6], k = 4
 Output: 4
  
 '''
+import heapq
 from typing import List
 
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
-        pass
+        pq= nums[:k]
+        heapq.heapify(pq)
+        for x in nums[k:]:
+            heapq.heappush(pq,k)
+            heapq.heappop(pq)
+        return pq[0]
+print(Solution().findKthLargest([3,2,1,5,6,4],2))
