@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Solution",
+            "request": "launch",
+            "mainClass": "src.Solution",
+            "projectName": "myLeetcode_366b0c52"
+        },
+        {
+            "type": "java",
+            "name": "Launch Solution",
+            "request": "launch",
+            "mainClass": "Solution",
+            "projectName": "myLeetcode_366b0c52"
+        },
+        {
+            "type": "java",
+            "name": "Launch twoSum",
+            "request": "launch",
+            "mainClass": "twoSum",
+            "projectName": "myLeetcode_366b0c52"
+        },
+        {
+            "type": "java",
+            "name": "Launch _0001_twoSum",
+            "request": "launch",
+            "mainClass": "_0001_twoSum",
+            "projectName": "myLeetcode_366b0c52"
+        },
+        {
+            "type": "java",
             "name": "Launch App",
             "request": "launch",
             "mainClass": "App",
