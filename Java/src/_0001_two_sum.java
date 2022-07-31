@@ -27,7 +27,6 @@ Output: [0,1]
 package src;
 import java.util.HashMap;
 
-import javax.print.attribute.standard.RequestingUserName;
 
 public class _0001_two_sum{
     public int[] twosum(int[] nums, int target) {
@@ -58,8 +57,8 @@ public class _0001_two_sum{
     }
 
 
-    
-
+    public int[] twosum2(int[] nums,int target){
+        
+        return new int[] {};
+    }
 };
-
-

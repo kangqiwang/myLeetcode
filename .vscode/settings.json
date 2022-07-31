@@ -3,5 +3,6 @@
     "java.project.sourcePaths": [
         "Java/LeetCodeJava/src",
         "Java"
-    ]
+    ],
+    "C_Cpp.errorSquiggles": "Disabled"
 }
