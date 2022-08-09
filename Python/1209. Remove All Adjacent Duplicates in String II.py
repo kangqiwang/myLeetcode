@@ -28,13 +28,16 @@ Output: "ps"
 
 '''
 from copy import copy
+from inspect import stack
 
 
 class Solution:
     def removeDuplicates(self, s: str, k: int) -> str:
         stck = []    
         
-        for c in s:                            
+        for c in s:
+            print("this is the c:"+c)                            
+            print(stck)
             if stck and stck[-1][0] == c: # check if stack is not empty
                 stck[-1][1]+=1
                 if stck[-1][1] == k:
