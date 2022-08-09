@@ -16,13 +16,18 @@ Explanation: The input board is shown above and the only valid solution is shown
 
 '''
 
+from operator import truediv
 from random import randrange
+from textwrap import fill
 from typing import List
 import numpy as np
 
 class Solution:
-    def solveSudoku(self, board: List[List[str]]) -> None:
+    def solveSudoku(self, board: List[List[str]]) -> List[List[str]]:
+        # self.fill(board,0,0)
+        
         self.solve(board,0,0)
+        return board
     def solve(self,board,r,c) -> bool:
         while board[r][c]!=".":
             c+=1
@@ -36,12 +41,29 @@ class Solution:
         board[r][c]="."
         return False
     
-    def isValidSudokuMove(board,r,c,value):
+    def isValidSudokuMove(self,board,r,c,value) -> bool:
         if any(board[r][i] == value for i in range(9)): return False
         if any(board[i][c] == value for i in range(9)): return False
         br,bc= 3*(r//3),3*(c//3)
         if any(board[i][j] == value for i in range(br,br+3) for j in range(bc,bc+3)):return False
+        return True
         
+        
+    # another solution to sudoku solver
+    
+    def fill(board,row,col):
+        if row== 9 :
+            return True
+        nrow = (row+1)%9
+        ncol = col+1 if nrow ==0 else col
+        if board[row][col] !="":
+            return fill(board,nrow,ncol)
+        
+        for i in range(1,10):
+            mcol = col //3
+            mrow= row //3
+            box_key = mcol * 3* mrow
+            
         
     
         
