@@ -25,7 +25,10 @@ Explanation: The only possible triplet does not sum up to 0.
 
 
 '''
+import numbers
+from turtle import left, right
 from typing import List
+from winreg import REG_NOTIFY_CHANGE_ATTRIBUTES
 
 
 
@@ -55,5 +58,28 @@ class Solution:
                     right=right-1
                     while left<right and nums[left] == nums[left-1]: left=left+1
                     while left<right and nums[right] == nums[right+1]:right = right -1
-        return res    
-print(Solution().threeSum([-1,0,1,2,-1,-4]))
+                    
+
+        return res
+    
+    def threeSum1(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()
+        res=[]
+        for i in range(len(nums)-2):
+            if nums[i]>0: break
+            if nums[i] == nums[i-1]: continue
+            left= i+1
+            right=len(nums)-1
+            while right>left:
+                if nums[i]+nums[left]+nums[right] >0:
+                    right-=1
+                elif nums[i]+nums[left]+nums[right] < 0:
+                    left+=1
+                else:
+                    res.append([nums[i],nums[left],nums[right]])
+                    left+=1
+                    right-=1
+                    while right>left and nums[left] == nums[left-1]: left+=1
+                    while right>left and nums[right] == nums[right+1]:right-=1
+        return res
+print(Solution().threeSum1([-1,0,1,2,-1,-4]))
