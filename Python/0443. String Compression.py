@@ -31,3 +31,10 @@ Explanation: The groups are "a" and "bbbbbbbbbbbb". This compresses to "ab12".
 
 
 '''
+
+from typing import List
+
+
+class Solution:
+    def compress(self, chars: List[str]) -> int:
+        pass
