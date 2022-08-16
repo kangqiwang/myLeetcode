@@ -60,6 +60,44 @@ Since 4193 is in the range [-231, 231 - 1], the final result is 4193.
 
 
 '''
+
+
+
+
+import sys
+
+
 class Solution:
     def myAtoi(self, s: str) -> int:
-        pass
+        ans= 0
+        neg=0
+        pos=0
+        p=False
+        a=False
+        n=False
+        for c in s:
+            if c ==' ': 
+                if n or neg or pos: break
+            elif c =='-':
+                if n:break
+                else: neg+=1
+            elif c =='+':
+                if n: break
+                else: pos+=1
+            elif c=='.':p=True
+            elif c>= '0' and c<='9' and not p and not a:
+                ans=ans*10+(int(c)-0)
+                n=True
+            else:
+                a=True
+        if neg: ans=-ans
+        if pos+neg>1:ans=0
+        
+            
+            
+        
+        
+        
+        return ans
+print(Solution().myAtoi("   -42"))
+            
