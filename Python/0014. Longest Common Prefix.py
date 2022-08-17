@@ -44,9 +44,6 @@ class Solution:
                 if i == len(strs[j]) or strs[j][i] != c:
                     return strs[0][:i]
         return strs[0] if strs else ""
-            
-                    
-                        
         # for s in strs:
             
     

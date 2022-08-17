@@ -6,10 +6,25 @@ An input string is valid if:
 Open brackets must be closed by the same type of brackets.
 Open brackets must be closed in the correct order.
 
+Example 1:
+
 Input: s = "()"
 Output: true
+Example 2:
+
+Input: s = "()[]{}"
+Output: true
+Example 3:
+
+Input: s = "(]"
+Output: false
+
 
 '''
+
+
+from inspect import stack
+from pickletools import read_unicodestring1
 
 
 class Solution:
@@ -27,3 +42,17 @@ class Solution:
                     return False
         return len(stack)==0
     
+    def isValid(self,s:str)->bool:
+        d = {'(':')', '{':'}','[':']'}
+        stack = []
+        for i in s:
+            if i in d:  # 1
+                stack.append(i)
+            elif len(stack) == 0 or d[stack.pop()] != i:  # 2
+                return False
+            else:
+                return False
+        return len(stack) == 0 # 3
+                
+            
+Solution()
