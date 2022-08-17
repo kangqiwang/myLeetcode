@@ -20,9 +20,10 @@ Explanation: The square root of 8 is 2.82842..., and since the decimal part is t
 '''
 
 class Solution:
-    def mySqrt(self, x: int) -> int:
-        r= x
-        while r*r >x:
-            r= (r+x//r)//2
-            
-        
+    def mySqrt(self, a: int) -> int:
+        x = a
+        while x * x > a:
+            x = (x + a // x) // 2
+        return x        
+    
+print( Solution().mySqrt(16))
