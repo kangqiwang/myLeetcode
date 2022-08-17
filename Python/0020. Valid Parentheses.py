@@ -50,8 +50,6 @@ class Solution:
                 stack.append(i)
             elif len(stack) == 0 or d[stack.pop()] != i:  # 2
                 return False
-            else:
-                return False
         return len(stack) == 0 # 3
                 
             
