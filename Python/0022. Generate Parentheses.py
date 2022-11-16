@@ -25,6 +25,7 @@ class Solution:
         self.dfs(left,right,ans,"")
         return ans
     def dfs(self,left,right,ans,string):
+        print("left: "+left+" , right:" + right+"")
         if right < left:
             return
         if not left and not right:
