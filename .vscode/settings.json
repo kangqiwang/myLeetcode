@@ -1,6 +1,13 @@
 {
     "python.pythonPath": "/usr/bin/python3",
     "java.project.sourcePaths": [
+<<<<<<< HEAD
         "Java/LeetCodeJava/src"
     ]
+=======
+        "Java/LeetCodeJava/src",
+        "Java"
+    ],
+    "C_Cpp.errorSquiggles": "Disabled"
+>>>>>>> 5c7f76a8f4db6c4bcaf205b87e519670dda366f7
 }

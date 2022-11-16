@@ -9,6 +9,7 @@
 #         self.val = x
 #         self.next = None
 
+import ListNode
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         carry = 0
@@ -29,4 +30,4 @@ class Solution:
             n = n.next
         return root.next
 
-
+print(Solution().addTwoNumbers())
