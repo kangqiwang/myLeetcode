@@ -28,3 +28,10 @@ Explanation: From the top-left corner, there are a total of 3 ways to reach the 
 
 
 '''
+
+# f(x,y) = f(x-1,y) + f(x,y-1)
+# f(0,0) = 1
+
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        pass
