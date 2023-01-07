@@ -31,7 +31,22 @@ Explanation: From the top-left corner, there are a total of 3 ways to reach the 
 
 # f(x,y) = f(x-1,y) + f(x,y-1)
 # f(0,0) = 1
+# dp[r][c] = dp[r][c]+dp[r-1][c]
 
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
-        pass
+        dp = [[0] * n for _ in range(m)]
+        for r in range(m):
+            for c in range(n):
+                if r == 0 or c == 0:
+                    dp[r][c] = 1
+                else:
+                    dp[r][c] = dp[r][c-1]+dp[r-1][c]
+        print(dp)
+        return dp[m-1][n-1]
+        
+        
+if __name__ == '__main__':
+    m = 3
+    n = 3
+    print(Solution().uniquePaths(m,n))
